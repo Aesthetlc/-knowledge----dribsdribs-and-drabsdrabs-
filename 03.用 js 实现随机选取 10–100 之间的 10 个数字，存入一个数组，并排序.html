@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  用 js 实现随机选取 10–100 之间的 10 个数字，存入一个数组，并排序
+
+        function fun1(start, end, len) {
+            var arr = [];
+            while (arr.length < len) {
+                var ran = parseInt(Math.random() * (end - start + 1)) + 10;
+                if (ran >= start && ran <= end) {
+                    arr.push(ran);
+                }
+            }
+            // for (var i = 0; i < len; i++) {
+            //     var ran = parseInt(Math.random() * (end - start + 1));
+            //     if (ran >= start && ran <= end) {
+            //         arr.push(ran); ///////////这里有问题，不一定是10个 需要修改？改成用while了，实现了
+            //     }
+            // }
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j + 1];
+                        arr[j + 1] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(fun1(10, 100, 10));
+    </script>
+</body>
+
+</html>
