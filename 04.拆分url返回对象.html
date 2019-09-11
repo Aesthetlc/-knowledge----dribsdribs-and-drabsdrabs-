@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //  URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e
+        var url = "http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
+
+        // 方法1
+        var obj1 = splitUrl(url);
+        console.log(obj1);
+
+        function splitUrl(url) {
+            var arr = url.split("?")
+            var left = arr[1];
+            var arr1 = left.split("&"); //["a=1", "b=2", "c=", "d=xxx", "e"]
+            var obj = {}
+            for (var i = 0; i < arr1.length; i++) {
+                var key = arr1[i].split("=")[0];
+                var value = arr1[i].split("=")[1];
+                obj[key] = value
+            }
+            return obj;
+        }
+    </script>
+</body>
+
+</html>
