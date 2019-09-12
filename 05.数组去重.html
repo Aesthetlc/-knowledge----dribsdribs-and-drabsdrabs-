@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    数组去重
+        //No.1
+        //es6 newSet 这个方法利用Set 这个数据类型中，存储的值都是独一无二的特性进行实现
+        let ary1 = [11, 3, 5, 2, 5, 42, 2, 3, 2, 1, 5];
+        console.log([...new Set(ary1)]);
+
+        //No.2
+        //利用对象键值对的方法
+        let ary2 = [1, 2, 3, 4, 2, 3, 4, 1, 2, 3, 3, 1, 2, 3, 4, 2, 1, 1];
+        var obj = {};
+        for (var i = 0; i < ary2.length; i++) {
+            var cur = ary2[i];
+            if (obj[cur] == cur) {
+                // ary2.splice(i,1)//数组塌陷
+                ary2[i] = ary2[ary2.length - 1];
+                ary2.length--;
+                i--;
+                continue;
+            } else {
+                obj[cur] = cur;
+            }
+        }
+        console.log(ary2);
+    </script>
+</body>
+
+</html>
