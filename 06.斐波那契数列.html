@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //斐波那契数列
+        //生兔子  1 1 2 3 5 8 13………………
+        // function fun(n) {
+        //     if (n == 1 || n == 2) {
+        //         return n = 1;
+        //     }
+        //     return fun(n - 2) + fun(n - 1);
+        // }
+        // console.log(fun(7))
+        // 优化 如果result[n]存在，就直接判断
+        var result = [];
+
+        function fun(n) {
+            if (n == 1 || n == 2) {
+                return n = 1;
+            }
+            if (result[n]) {
+                return result[n];
+            } else {
+                result[n] = fun(n - 2) + fun(n - 1);
+                return result[n];
+            }
+        }
+        console.log(fun(7))
+    </script>
+</body>
+
+</html>
