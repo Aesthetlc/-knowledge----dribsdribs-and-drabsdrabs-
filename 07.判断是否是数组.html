@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //方式1
+        //判断是否是数组
+        var arr = [1, 2, 3, 4, 5, 6];
+        console.log(Array.isArray(arr));
+        //方式2
+        //判断是否具有数组得方法
+        var a = "你好";
+        arr.push("zzz");
+        //a.push("zzz");// is not a function
+        //方式3
+        console.log(arr instanceof Array); //true
+        console.log(a instanceof Array);//false
+
+    </script>
+</body>
+
+</html>
