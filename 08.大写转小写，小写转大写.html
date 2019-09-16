@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var str = "AbCd";
+        // var newStr = '';
+        // for (var i = 0; i < str.length; i++) {
+        //     if (str.charAt(i) == str.charAt(i).toUpperCase()) {
+        //         newStr = newStr + str.charAt(i).toLowerCase();
+        //     } else {
+        //         newStr = newStr + str.charAt(i).toUpperCase();
+        //     }
+        // }
+        // console.log(str, newStr);
+
+
+        var str = "AbCd";
+        var arr = str.split("");
+        str = arr.map((item, index) => {
+            return item === item.toUpperCase() ? item.toLowerCase() : item.toUpperCase();
+        }).join("");
+        console.log(str);
+    </script>
+</body>
+
+</html>
