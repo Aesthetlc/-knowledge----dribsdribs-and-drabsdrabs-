@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./../04.JQuery/JQuery [day1] 初始-动画效果/js/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="button" value="点击" id="btn" class="btn" data-id="1">
+    <input type="button" value="点击" id="btn1" class="btn" data-id="2">
+    <script>
+        var btn = document.getElementsByClassName('btn');
+
+        function foo() {
+            this.a = function () {
+                console.log(201)
+            };
+            foo.a = function () {
+                console.log(100)
+            };
+            // 一个变量,无任何意义
+            var a = function () {
+                console.log(4076)
+            };
+            a = function () {
+                console.log(302)
+            };
+        };
+        foo.prototype.a = function () {
+            console.log(50007)
+        };
+        // 实例方法  必须把构造函数或者ES6类 new一下 也就是创建为对象  才能访问到的方法，都有this
+        // 静态方法  不用new，说白了就是不用去初始化对象，直接通过类名.方法或者  构造函数.方法  就可以访问的 
+        foo.a = function () {
+            console.log(67879)
+        };
+        foo.a(); //67879
+        var obj = new foo();
+        obj.a(); //201
+        foo.a(); //100
+    </script>
+</body>
+
+</html>
